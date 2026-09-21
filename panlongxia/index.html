@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="盘龙峡旅游攻略 - 广东德庆盘龙峡生态旅游度假区官方首页。提供盘龙峡瀑布群、漂流、瀑布酒店及森林浴等特色项目介绍，实时天气、门票价格及交通指南。">
+    <meta name="keywords" content="盘龙峡, 德庆盘龙峡, 盘龙峡旅游, 盘龙峡漂流, 盘龙峡瀑布, 西江流域">
+    <title>盘龙峡-广东德庆生态旅游度假区官方门户</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-green: #2E7D32;
+            --dark-green: #1B5E20;
+            --light-green: #E8F5E9;
+            --accent-gold: #C6A700;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --white: #ffffff;
+            --bg-off-white: #f9f9f9;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--dark-green);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 0.5rem auto 0;
+        }
+
+        .section-desc {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--dark-green);
+            color: var(--white);
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--dark-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-green);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-green);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--accent-gold);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #b39400;
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/seed/panlongxialandscape/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-off-white);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-green);
+        }
+
+        /* Attractions Section */
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .attraction-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 300px;
+            group: ;
+        }
+
+        .attraction-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .attraction-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .attraction-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1.5rem;
+            color: var(--white);
+        }
+
+        .attraction-overlay h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .attraction-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Tour Info & Weather */
+        .info-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .info-content h3 {
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-green);
+            padding-left: 1rem;
+            color: var(--dark-green);
+        }
+
+        .info-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-list li::before {
+            content: '✓';
+            color: var(--primary-green);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .weather-box {
+            background-color: var(--light-green);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .weather-temp {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--dark-green);
+        }
+
+        .weather-desc {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        /* Ticket Pricing */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .pricing-table th, .pricing-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-table th {
+            background-color: var(--dark-green);
+            color: var(--white);
+        }
+
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price {
+            font-weight: bold;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 4rem 0 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .attractions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-section {
+                grid-template-columns: 1fr;
+            }
+
+            .top-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <span>📍 地址：广东省肇庆市德庆县官圩镇</span>
+            <span>📞 咨询热线：0758-XXX XXXX</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>❖</span> 盘龙峡旅游
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">景点介绍</a></li>
+                    <li><a href="#">特色体验</a></li>
+                    <li><a href="#">住宿餐饮</a></li>
+                    <li><a href="#">票务预订</a></li>
+                </ul>
+            </nav>
+            <a href="#booking" class="cta-btn">立即预订</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>盘龙峡生态旅游度假区</h1>
+            <p>中国首个瀑布酒店群所在地，感受千军万马瀑布的震撼，体验华南第一漂的刺激，尽享原生态森林氧吧。</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">查看门票</button>
+                <button class="btn btn-secondary">浏览攻略</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">盘龙峡特色</h2>
+                <p class="section-desc">集瀑布、漂流、温泉、森林于一体的综合度假区</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌊</div>
+                    <h3>瀑布群奇观</h3>
+                    <p>拥有两大瀑布群，千军万马瀑布气势磅礴，神龙瀑布灵动秀美。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚣</div>
+                    <h3>峡谷漂流</h3>
+                    <p>华南第一漂，惊险刺激，沿途风景如画，是夏日消暑的首选。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌲</div>
+                    <h3>天然氧吧</h3>
+                    <p>负离子含量极高，漫步于原始森林中，深呼吸感受大自然的馈赠。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♨️</div>
+                    <h3>瀑布温泉</h3>
+                    <p>全国罕见的瀑布温泉，在飞流直下的瀑布下沐浴，体验独特的养生之旅。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门景点</h2>
+                <p class="section-desc">探索盘龙峡的每一个精彩角落</p>
+            </div>
+            <div class="attractions-grid">
+                <article class="attraction-card">
+                    <img src="https://picsum.photos/seed/panlong1/400/300.jpg" alt="千军万马瀑布">
+                    <div class="attraction-overlay">
+                        <h3>千军万马瀑布</h3>
+                        <p>气势恢宏的瀑布群，宛如千军万马奔腾。</p>
+                    </div>
+                </article>
+                <article class="attraction-card">
+                    <img src="https://picsum.photos/seed/panlong2/400/300.jpg" alt="神龙瀑布">
+                    <div class="attraction-overlay">
+                        <h3>神龙瀑布</h3>
+                        <p>形态优美的瀑布，水雾缭绕如梦似幻。</p>
+                    </div>
+                </article>
+                <article class="attraction-card">
+                    <img src="https://picsum.photos/seed/panlong3/400/300.jpg" alt="盘龙峡漂流">
+                    <div class="attraction-overlay">
+                        <h3>盘龙峡漂流</h3>
+                        <p>全长数公里的漂流河道，惊险与美景并存。</p>
+                    </div>
+                </article>
+                <article class="attraction-card">
+                    <img src="https://picsum.photos/seed/panlong4/400/300.jpg" alt="圣泉广场">
+                    <div class="attraction-overlay">
+                        <h3>圣泉广场</h3>
+                        <p>集演艺、购物、美食于一体的休闲广场。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info & Weather Section -->
+    <section class="section" style="background-color: var(--bg-off-white);">
+        <div class="container info-section">
+            <div class="info-content">
+                <h3>景区实用信息</h3>
+                <ul class="info-list">
+                    <li><strong>开放时间：</strong>08:30 - 17:30 (漂流项目根据季节调整，建议出行前咨询)</li>
+                    <li><strong>建议游玩时长：</strong>1天 - 2天</li>
+                    <li><strong>最佳季节：</strong>4月 - 10月（夏季适合漂流，秋季适合赏枫）</li>
+                    <li><strong>交通指南：</strong>
+                        <br>自驾：导航至“德庆盘龙峡”，位于广昆高速德庆出口附近，交通便利。
+                        <br>大巴：广州省汽车客运站有直达德庆的班车，转乘当地公交或出租车。
+                    </li>
+                    <li><strong>注意事项：</strong>景区内部分路段较滑，请穿防滑运动鞋；漂流时请保管好贵重物品。</li>
+                </ul>
+            </div>
+            <aside>
+                <div class="weather-box">
+                    <h4>今日天气</h4>
+                    <p style="color:#666; font-size:0.9rem;">德庆县 盘龙峡景区</p>
+                    <div class="weather-temp">28°C</div>
+                    <p class="weather-desc">多云转晴 | 空气优</p>
+                    <button class="btn btn-primary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">查看预报</button>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Ticket Pricing Section -->
+    <section class="section" id="booking">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">票务价格</h2>
+                <p class="section-desc">透明公开，让您畅玩无忧</p>
+            </div>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>票种名称</th>
+                        <th>成人票</th>
+                        <th>儿童票</th>
+                        <th>长者票</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>景区大门票</td>
+                        <td class="price">¥60</td>
+                        <td class="price">¥30</td>
+                        <td class="price">¥30</td>
+                    </tr>
+                    <tr>
+                        <td>峡谷漂流套票</td>
+                        <td class="price">¥168</td>
+                        <td class="price">¥88</td>
+                        <td class="price">¥88</td>
+                    </tr>
+                    <tr>
+                        <td>瀑布温泉套票</td>
+                        <td class="price">¥188</td>
+                        <td class="price">¥98</td>
+                        <td class="price">¥98</td>
+                    </tr>
+                    <tr>
+                        <td>景区+酒店套餐</td>
+                        <td class="price">¥XXX</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="text-align: center; margin-top: 1rem; color: var(--text-gray); font-size: 0.9rem;">*以上价格仅供参考，具体以景区当日实际公示为准。</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于盘龙峡</h4>
+                    <p>盘龙峡生态旅游度假区位于广东省肇庆市德庆县，是国家4A级旅游景区，以瀑布群、峡谷风光和森林生态为特色。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">景点介绍</a></li>
+                        <li><a href="#">酒店预订</a></li>
+                        <li><a href="#">美食攻略</a></li>
+                        <li><a href="#">交通指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>地址：广东省肇庆市德庆县官圩镇</li>
+                        <li>电话：0758-XXX XXXX</li>
+                        <li>邮箱：contact@panlongxia.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 盘龙峡生态旅游度假区 版权所有 | 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
