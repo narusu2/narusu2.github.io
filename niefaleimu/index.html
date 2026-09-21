@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>涅法雷姆-艾尔登法环全地图探索与成就攻略指南</title>
+    <meta name="description" content="本站提供《艾尔登法环》中关键地点“涅法雷姆”的详细攻略，包含地图位置、关键道具获取、BOSS战技巧及全收集路线规划。">
+    <meta name="keywords" content="涅法雷姆, 艾尔登法环, 地图, 攻略, 获得成就, 塞尔维斯, 巨人陨落之地">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0f0e13;
+            --card-bg: #1e1c24;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-color: #d4af37;
+            --accent-hover: #f9ce4e;
+            --border-color: #33333f;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 14, 19, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/eldenring/1920/600.jpg') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.8);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #d1d1d1;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: #000;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem var(--spacing-unit);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-color: var(--accent-color);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #2a2830;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Sidebar */
+        aside .card {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Map Visual */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-color: #151419;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://picsum.photos/seed/eldenmap/1200/600.jpg');
+            background-size: cover;
+            position: relative;
+        }
+
+        .map-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .map-marker {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: #ff4444;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 10px rgba(255, 68, 68, 0.3);
+            animation: pulse 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            70% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+        }
+
+        /* Steps List */
+        .steps-list {
+            list-style: none;
+            counter-reset: step;
+        }
+
+        .steps-list li {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .steps-list li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background-color: var(--accent-color);
+            color: #000;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .steps-list h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .steps-list p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0c;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem var(--spacing-unit);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">ELDEN GUIDE</div>
+            <nav>
+                <ul>
+                    <li><a href="#guide">地图探索</a></li>
+                    <li><a href="#items">关键道具</a></li>
+                    <li><a href="#boss">BOSS战</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>涅法雷姆</h1>
+            <p>巨人陨落之地的核心区域，寻找英雄涅斐莉的踪迹，解锁隐藏的剧情线索与稀有战利品。</p>
+            <a href="#guide" class="btn">开始探索</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="grid">
+            <!-- Main Content -->
+            <main>
+                <section id="guide">
+                    <h2 class="section-title">地图与位置指南</h2>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <div class="map-overlay"></div>
+                            <div class="map-marker" title="涅法雷姆区域"></div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; color: var(--text-muted);">
+                        涅法雷姆位于巨人陨落之地的东北部，是一个被巨人城墙包围的封闭区域。这里是通往盖利德地图的关键枢纽，也是许多支线任务的终点。
+                    </p>
+                </section>
+
+                <section id="items">
+                    <h2 class="section-title">必拿关键道具</h2>
+                    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/telescope/400/200.jpg" alt="望远镜" class="card-image">
+                            <div class="card-body">
+                                <h3 class="card-title">涅法雷姆的望远镜</h3>
+                                <p class="card-text">位于涅法雷姆的地面，通过望远镜可以观察到巨人陨落之地的其他区域。</p>
+                                <span class="card-meta">功能：远程观察</span>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/tear/400/200.jpg" alt="陨石泪滴" class="card-image">
+                            <div class="card-body">
+                                <h3 class="card-title">陨石泪滴</h3>
+                                <p class="card-text">在涅法雷姆的掩体中可以找到，召唤后会投掷陨石攻击敌人。</p>
+                                <span class="card-meta">功能：辅助召唤物</span>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="boss">
+                    <h2 class="section-title">BOSS战：塞德拉斯</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <p style="margin-bottom: 1rem; color: var(--text-muted);">
+                                涅法雷姆区域的最终BOSS是塞德拉斯，一名手持巨大镰刀的巨人骑士。战斗分为两个阶段，他会在半空中投掷陨石，并在地面进行近战连招。
+                            </p>
+                            <h3 style="color: #fff; margin-bottom: 0.5rem;">战斗技巧</h3>
+                            <ul style="list-style: none; color: var(--text-muted); padding-left: 0;">
+                                <li style="margin-bottom: 0.5rem;">• <strong>第一阶段：</strong> 注意躲避他的跳跃攻击，陨石落地会造成大范围爆炸。</li>
+                                <li style="margin-bottom: 0.5rem;">• <strong>第二阶段：</strong> 当他召唤巨大的石像鬼时，优先清理小怪，保持移动。</li>
+                                <li>• <strong>弱点：</strong> 使用战技可以打断他的蓄力动作。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="steps">
+                    <h2 class="section-title">如何到达涅法雷姆</h2>
+                    <ol class="steps-list">
+                        <li>
+                            <h3>从盖利德出发</h3>
+                            <p>传送到盖利德的三姊妹塔，向北移动进入巨人陨落之地。</p>
+                        </li>
+                        <li>
+                            <h3>攀登巨塔</h3>
+                            <p>在巨人陨落之地，找到高处的小巨人塔，跳下并使用跳跃能力（灵马战技）降落到下层区域。</p>
+                        </li>
+                        <li>
+                            <h3>进入封印大门</h3>
+                            <p>穿过燃烧的森林，找到通往涅法雷姆的巨大石门，使用钥匙或破坏机关进入。</p>
+                        </li>
+                    </ol>
+                </section>
+            </main>
+
+            <!-- Sidebar -->
+            <aside>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">区域特色</h3>
+                        <p class="card-text" style="margin-bottom: 1rem;">
+                            涅法雷姆的环境充满了被陨石击毁的遗迹，空气中弥漫着硫磺味。这里不仅是塞尔维斯教授的藏身之处，也是理解英雄涅斐莉牺牲的关键地点。
+                        </p>
+                        <a href="#" style="color: var(--accent-color); font-size: 0.9rem; font-weight: bold;">阅读背景故事 &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">相关成就</h3>
+                        <ul style="list-style: none; color: var(--text-muted); font-size: 0.9rem;">
+                            <li style="margin-bottom: 0.5rem;">✓ <strong>英雄之血：</strong> 获得英雄涅斐莉的骨灰</li>
+                            <li style="margin-bottom: 0.5rem;">✓ <strong>褪色者的智慧：</strong> 与塞尔维斯互动</li>
+                            <li>✓ <strong>巨人陨落：</strong> 击败塞德拉斯</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">装备推荐</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+                            面对陨石轰炸，推荐使用<strong>重甲</strong>和<strong>魔法盾</strong>，并准备充足的<strong>恢复药水</strong>。
+                        </p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 ELDEN GUIDE. 本站为玩家攻略社区，非官方页面。</p>
+        <p style="margin-top: 0.5rem; color: #555;">《艾尔登法环》及其相关素材版权归 FromSoftware 和万代南梦宫所有。</p>
+    </footer>
+
+</body>
+</html>
