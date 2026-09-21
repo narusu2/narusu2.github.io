@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="冒险王3D - 热门3D开放世界冒险游戏攻略、职业详解、装备搭配及玩家社区交流平台。提供最新版本更新资讯与新手入门指南。">
+    <meta name="keywords" content="冒险王3D, 3D冒险游戏, 冒险王3D攻略, 冒险王3D职业, 冒险王3D下载, 开放世界RPG">
+    <title>冒险王3D-3D开放世界冒险游戏攻略与社区</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-radius: 12px;
+            --container-width: 1200px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--text-muted);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 100%),
+                        url('https://picsum.photos/seed/Adventure3D/1920/1080') center/cover no-repeat;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(59, 130, 246, 0.2);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item h3 {
+            font-size: 24px;
+            color: var(--text-main);
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .section-link {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Game Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Latest Updates */
+        .updates-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .update-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .update-item {
+            display: flex;
+            gap: 20px;
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            align-items: center;
+        }
+
+        .update-date {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: var(--accent-color);
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-align: center;
+            min-width: 70px;
+        }
+
+        .update-date .day {
+            font-size: 20px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .update-content h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .update-content p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .update-content .tag {
+            display: inline-block;
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        .tag-new { background-color: #10b981; color: white; }
+        .tag-fix { background-color: #ef4444; color: white; }
+        .tag-event { background-color: #8b5cf6; color: white; }
+
+        .sidebar-card {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-card h4 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ranking-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .ranking-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .rank-num.top-1 { background-color: var(--accent-color); color: white; }
+        .rank-num.top-2 { background-color: #94a3b8; color: white; }
+        .rank-num.top-3 { background-color: #b45309; color: white; }
+
+        /* Guide Grid */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .guide-card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .guide-thumb {
+            height: 180px;
+            width: 100%;
+            position: relative;
+        }
+
+        .guide-thumb img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .guide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .guide-overlay h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .guide-info {
+            padding: 20px;
+        }
+
+        .guide-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .guide-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020617;
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero { height: 500px; }
+            .header-inner { padding: 0 15px; }
+            .nav-menu { display: none; } /* Simplified for demo */
+            .updates-layout { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-brand p { margin: 0 auto; }
+            .hero-stats { justify-content: space-around; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span>冒险王3D</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">游戏攻略</a>
+                <a href="#">职业图鉴</a>
+                <a href="#">装备大全</a>
+                <a href="#">活动中心</a>
+                <a href="#">玩家社区</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">下载游戏</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-tag">3D MMORPG · 开放世界</span>
+                    <h1>踏上史诗征程，征服未知大陆</h1>
+                    <p>在《冒险王3D》中，你将穿越奇幻森林、荒凉沙漠与古老遗迹。自由探索、组建公会、挑战世界BOSS，书写属于你的传奇冒险故事。</p>
+                    <div style="display: flex; gap: 15px;">
+                        <button class="btn btn-primary" style="padding: 12px 30px; font-size: 16px;">立即开始冒险</button>
+                        <button class="btn btn-outline" style="padding: 12px 30px; font-size: 16px;">观看宣传片</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>1000+</h3>
+                            <p>探索区域</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>特色职业</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>500W+</h3>
+                            <p>在线玩家</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>游戏核心特色</h2>
+                        <p>体验前所未有的3D沉浸式冒险乐趣</p>
+                    </div>
+                    <a href="#" class="section-link">查看全部特色 &rarr;</a>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚔️</div>
+                        <h3>硬核战斗系统</h3>
+                        <p>流畅的连招技能与策略性技能搭配，支持多人实时团战，考验操作与配合。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🗺️</div>
+                        <h3>无缝大世界</h3>
+                        <p>打破地图限制，自由飞行探索。无论是高山还是深渊，皆可随心而往。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>社交公会体系</h3>
+                        <p>加入强大的公会，参与领土争夺战。与好友并肩作战，争夺全服霸主地位。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏠</div>
+                        <h3>个性家园系统</h3>
+                        <p>打造独一无二的个人领地，种植资源、装饰房屋，体验田园牧歌生活。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updates & Sidebar -->
+        <section style="background-color: rgba(255,255,255,0.02);">
+            <div class="container">
+                <div class="updates-layout">
+                    <div class="section-header" style="margin-bottom: 20px;">
+                        <div class="section-title">
+                            <h2>最新动态</h2>
+                            <p>掌握版本更新，抢占先机</p>
+                        </div>
+                    </div>
+                    <div class="update-list">
+                        <div class="update-item">
+                            <div class="update-date">
+                                <span class="day">12</span>
+                                <span class="month">OCT</span>
+                            </div>
+                            <div class="update-content">
+                                <h4>[版本更新] 深渊副本“暗黑裂隙”正式开启</h4>
+                                <p>全新高难度副本上线，掉落传说级装备，挑战极限BOSS。每日副本次数限制调整。</p>
+                                <span class="tag tag-new">新内容</span>
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">
+                                <span class="day">08</span>
+                                <span class="month">OCT</span>
+                            </div>
+                            <div class="update-content">
+                                <h4>[维护公告] 10月8日例行停机维护通知</h4>
+                                <p>预计维护时间2小时，包含系统优化与Bug修复，请大家提前做好准备。</p>
+                                <span class="tag tag-fix">维护</span>
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">
+                                <span class="day">05</span>
+                                <span class="month">OCT</span>
+                            </div>
+                            <div class="update-content">
+                                <h4>[限时活动] 国庆狂欢庆典开启</h4>
+                                <p>登录即送七日豪礼，参与节日副本获取限定时装“黄金龙鳞”。</p>
+                                <span class="tag tag-event">活动</span>
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">
+                                <span class="day">01</span>
+                                <span class="month">OCT</span>
+                            </div>
+                            <div class="update-content">
+                                <h4>[职业调整] 战士系职业平衡性调整说明</h4>
+                                <p>优化了狂战士的爆发伤害机制，调整了防御姿态的冷却时间。</p>
+                                <span class="tag tag-fix">平衡</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside>
+                    <div class="sidebar-card">
+                        <h4>热门排行</h4>
+                        <ul class="ranking-list">
+                            <li>
+                                <span class="rank-num top-1">1</span>
+                                <a href="#">暗夜刺客：刺客信条</a>
+                            </li>
+                            <li>
+                                <span class="rank-num top-2">2</span>
+                                <a href="#">圣骑士：圣光审判流</a>
+                            </li>
+                            <li>
+                                <span class="rank-num top-3">3</span>
+                                <a href="#">魔导师：元素爆发指南</a>
+                            </li>
+                            <li>
+                                <span class="rank-num">4</span>
+                                <a href="#">弓箭手：风筝流加点</a>
+                            </li>
+                            <li>
+                                <span class="rank-num">5</span>
+                                <a href="#">狂战士：一刀999</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Guides Section -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>新手攻略</h2>
+                        <p>从零开始，快速进阶游戏大师</p>
+                    </div>
+                    <a href="#" class="section-link">查看更多攻略 &rarr;</a>
+                </div>
+                <div class="guide-grid">
+                    <article class="guide-card">
+                        <div class="guide-thumb">
+                            <img src="https://picsum.photos/seed/Class/400/250" alt="职业选择">
+                            <div class="guide-overlay">
+                                <h3>新手职业选择指南</h3>
+                            </div>
+                        </div>
+                        <div class="guide-info">
+                            <div class="guide-meta">
+                                <span>角色培养</span>
+                                <span>5分钟阅读</span>
+                            </div>
+                            <p>不知道选什么职业？本文详细分析各职业的定位、优缺点及适合的玩家群体，助你做出最适合自己的选择。</p>
+                        </div>
+                    </article>
+                    <article class="guide-card">
+                        <div class="guide-thumb">
+                            <img src="https://picsum.photos/seed/Map/400/250" alt="地图探索">
+                            <div class="guide-overlay">
+                                <h3>全地图隐藏宝箱位置</h3>
+                            </div>
+                        </div>
+                        <div class="guide-info">
+                            <div class="guide-meta">
+                                <span>地图探索</span>
+                                <span>8分钟阅读</span>
+                            </div>
+                            <p>整理了游戏中所有隐藏宝箱的坐标，包含主城、野外及地下城，助你轻松收集稀有材料。</p>
+                        </div>
+                    </article>
+                    <article class="guide-card">
+                        <div class="guide-thumb">
+                            <img src="https://picsum.photos/seed/Equipment/400/250" alt="装备打造">
+                            <div class="guide-overlay">
+                                <h3>装备强化与附魔技巧</h3>
+                            </div>
+                        </div>
+                        <div class="guide-info">
+                            <div class="guide-meta">
+                                <span>装备系统</span>
+                                <span>6分钟阅读</span>
+                            </div>
+                            <p>如何最大化提升装备属性？本文解析强化成功率、附魔词条选择及保底机制，省钱又强力。</p>
+                        </div>
+                    </article>
+                    <article class="guide-card">
+                        <div class="guide-thumb">
+                            <img src="https://picsum.photos/seed/Combat/400/250" alt="PVP技巧">
+                            <div class="guide-overlay">
+                                <h3>PVP竞技场实战技巧</h3>
+                            </div>
+                        </div>
+                        <div class="guide-info">
+                            <div class="guide-meta">
+                                <span>竞技场</span>
+                                <span>10分钟阅读</span>
+                            </div>
+                            <p>掌握走位、技能释放时机与仇恨控制，让你在竞技场中无往不利，轻松上分。</p>
+                        </div>
+                    </article>
+                    <article class="guide-card">
+                        <div class="guide-thumb">
+                            <img src="https://picsum.photos/seed/Group/400/250" alt="组队攻略">
+                            <div class="guide-overlay">
+                                <h3>副本组队配合要点</h3>
+                            </div>
+                        </div>
+                        <div class="guide-info">
+                            <div class="guide-meta">
+                                <span>组队副本</span>
+                                <span>4分钟阅读</span>
+                            </div>
+                            <p>坦克、治疗、输出如何配合？详解BOSS机制与分工，告别团灭，高效通关。</p>
+                        </div>
+                    </article>
+                    <article class="guide-card">
+                        <div class="guide-thumb">
+                            <img src="https://picsum.photos/seed/Money/400/250" alt="经济系统">
+                            <div class="guide-overlay">
+                                <h3>游戏经济与赚钱指南</h3>
+                            </div>
+                        </div>
+                        <div class="guide-info">
+                            <div class="guide-meta">
+                                <span>经济系统</span>
+                                <span>7分钟阅读</span>
+                            </div>
+                            <p>不想当“穷鬼”？从采集、加工到交易行，全方位解析赚钱套路。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>冒险王3D</h3>
+                    <p>致力于为玩家提供最全面、最及时的游戏攻略与社区交流平台。让我们一起探索这个精彩的3D虚拟世界。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">游戏下载</a></li>
+                        <li><a href="#">新手教程</a></li>
+                        <li><a href="#">玩家论坛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏资料</h4>
+                    <ul>
+                        <li><a href="#">职业大全</a></li>
+                        <li><a href="#">装备图鉴</a></li>
+                        <li><a href="#">怪物图鉴</a></li>
+                        <li><a href="#">地图坐标</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">玩家QQ群</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">商务合作</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 冒险王3D攻略站. All Rights Reserved. 本站为非官方网站，仅提供攻略与资讯服务。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
