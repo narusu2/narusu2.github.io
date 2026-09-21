@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="相忘于江湖 歌词 - 本站提供《相忘于江湖》歌曲完整歌词文本，包含歌曲创作背景、演唱者信息及歌曲赏析，帮助您准确理解歌词意境与情感表达。">
+    <meta name="keywords" content="相忘于江湖 歌词, 相忘于江湖, 歌词, 音乐, 歌曲">
+    <title>相忘于江湖 歌词 - 歌词文本与歌曲赏析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #8e44ad;
+            --bg-color: #fdfbf7;
+            --text-color: #333;
+            --light-text: #666;
+            --border-color: #e0e0e0;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --font-serif: "Songti SC", "Noto Serif SC", serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e8eaf6 100%);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .hero-meta {
+            color: var(--light-text);
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            background: rgba(142, 68, 173, 0.1);
+            color: var(--accent-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        /* 歌词主区域 */
+        .lyrics-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .lyrics-container {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            line-height: 2.2;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .verse {
+            margin-bottom: 1.5rem;
+        }
+
+        .verse strong {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--light-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* 歌曲信息与赏析 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .song-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .song-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+
+        .info-label {
+            color: var(--light-text);
+        }
+
+        .info-value {
+            font-weight: 500;
+        }
+
+        .analysis-section h2 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            padding-left: 15px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .analysis-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .analysis-content blockquote {
+            border-left: 3px solid var(--border-color);
+            padding-left: 20px;
+            margin: 30px 0;
+            color: var(--light-text);
+            font-style: italic;
+            font-family: var(--font-serif);
+            background: #fafafa;
+            padding: 20px;
+        }
+
+        /* 相关推荐 */
+        .related-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--accent-color);
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tag {
+            background: #f5f5f5;
+            color: var(--text-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .tag:hover {
+            background: var(--accent-color);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lyrics-section {
+                padding: 25px 20px;
+            }
+
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">歌词库</a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">华语</a></li>
+                    <li><a href="#">日韩</a></li>
+                    <li><a href="#">欧美</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>相忘于江湖</h1>
+                <div class="hero-meta">
+                    <span>古风 / 情感</span>
+                    <span class="hero-tag">热门</span>
+                    <span>经典老歌</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="info-grid">
+                <!-- 歌曲信息卡片 -->
+                <article class="song-card">
+                    <h3>歌曲信息</h3>
+                    <ul class="info-list">
+                        <li><span class="info-label">歌曲名称</span><span class="info-value">相忘于江湖</span></li>
+                        <li><span class="info-label">词曲作者</span><span class="info-value">未知</span></li>
+                        <li><span class="info-label">收录专辑</span><span class="info-value">古风经典合集</span></li>
+                        <li><span class="info-label">发行时间</span><span class="info-value">2000年代</span></li>
+                        <li><span class="info-label">风格流派</span><span class="info-value">中国风 / 流行</span></li>
+                    </ul>
+                </article>
+
+                <!-- 歌词内容 -->
+                <article class="lyrics-section">
+                    <div class="lyrics-container">
+                        <div class="verse">
+                            <strong>Verse 1</strong>
+                            <p>风起的时候<br>我在江湖的渡口等你<br>雾散的时候<br>我看见你远去的背影</p>
+                        </div>
+                        <div class="verse">
+                            <strong>Verse 2</strong>
+                            <p>剑未冷<br>马蹄声已远去<br>酒尚温<br>故人已不在</p>
+                        </div>
+                        <div class="verse">
+                            <strong>Chorus</strong>
+                            <p>相忘于江湖<br>不如相濡以沫<br>但这江湖太大<br>容不下你我</p>
+                        </div>
+                        <div class="verse">
+                            <strong>Verse 3</strong>
+                            <p>看那花开花落<br>云卷云舒<br>世间繁华<br>终归尘土</p>
+                        </div>
+                        <div class="verse">
+                            <strong>Outro</strong>
+                            <p>从此山水不相逢<br>莫问旧人归何处</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- 赏析区域 -->
+            <section class="analysis-section">
+                <h2>歌词赏析与意境</h2>
+                <div class="analysis-content">
+                    <p>“相忘于江湖”这一概念，源自《庄子·大宗师》，原意是指鱼在泉水干涸后，两条鱼吐沫互相湿润生存，不如相忘于江湖，各自游向更广阔的水域。这首歌词巧妙地借用了这一典故，将现代人的情感纠葛与古人的江湖情怀相结合。</p>
+                    <p>歌词中通过“风起”、“雾散”、“剑冷”、“马蹄”等意象，构建了一个苍凉而宏大的武侠背景。这种环境描写并非为了单纯的炫技，而是为了反衬出“故人不在”的孤独感。作者并未直接描写撕心裂肺的告别，而是选择了一种更为隐忍和成熟的处理方式——接受离别。</p>
+                    <blockquote>
+                        “相忘于江湖，不如相濡以沫。”<br>
+                        —— 出自《庄子·大宗师》
+                    </blockquote>
+                    <p>整首歌的情感基调是淡然的。它传达了一种成年人处理情感关系的态度：当现实无法维系时，放手是一种慈悲。歌词中的“江湖”象征着复杂的社会环境与无常的命运，而“相忘”则是一种对过往的尊重和对未来的期许。</p>
+                </div>
+            </section>
+
+            <!-- 相关推荐 -->
+            <section class="related-section">
+                <h3 class="section-title">相关推荐</h3>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">江湖路远</a>
+                    <a href="#" class="tag">古风歌词精选</a>
+                    <a href="#" class="tag">离别伤感</a>
+                    <a href="#" class="tag">庄子哲理</a>
+                    <a href="#" class="tag">武侠经典</a>
+                    <a href="#" class="tag">情感语录</a>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">版权声明</a>
+                <a href="#">联系合作</a>
+            </div>
+            <p class="copyright">© 2023 歌词库 - 专注于分享高质量歌词文本与音乐赏析</p>
+        </div>
+    </footer>
+
+</body>
+</html>
