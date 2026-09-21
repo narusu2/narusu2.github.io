@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夹缝生存 h顾青阳 - 独立漫画连载平台</title>
+    <meta name="description" content="《夹缝生存》h顾青阳漫画正版连载平台。深入解析主角顾青阳在夹缝中的挣扎与救赎，提供高清无删减章节阅读、角色关系图及作者访谈，沉浸式体验现实向剧情。">
+    <meta name="keywords" content="夹缝生存, h顾青阳, 顾青阳, 漫画, 独立漫画, 现实向漫画, 线上阅读">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #f4f4f6;
+            --card-bg: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --accent-color: #2c3e50;
+            --highlight-color: #e74c3c;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--highlight-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: var(--highlight-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--highlight-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--highlight-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            background-image: url('https://picsum.photos/seed/guqingyang/1600/900');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .hero-tag {
+            background-color: var(--highlight-color);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 30px;
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Manga List / Chapters */
+        .chapter-list {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: var(--transition);
+        }
+
+        .chapter-item:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-item:hover {
+            background-color: #fafafa;
+        }
+
+        .chapter-info h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .chapter-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .chapter-status {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .chapter-status.new {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        /* Character Analysis */
+        .character-section {
+            background-color: #fff;
+        }
+
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .char-card {
+            text-align: center;
+        }
+
+        .char-img-wrapper {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--bg-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .char-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .char-role {
+            font-size: 14px;
+            color: var(--highlight-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .char-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        /* Theme & Analysis */
+        .theme-analysis {
+            background-color: var(--bg-color);
+        }
+
+        .analysis-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--highlight-color);
+        }
+
+        .analysis-box h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .analysis-box p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 10px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--highlight-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero {
+                height: auto;
+                padding: 80px 0;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">夹缝<span>生存</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#chapters">章节列表</a></li>
+                    <li><a href="#characters">角色解析</a></li>
+                    <li><a href="#analysis">深度解读</a></li>
+                    <li><a href="#faq">读者问答</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container hero-content">
+                <span class="hero-tag">独立漫画 / 现实向</span>
+                <h1>在现实与理想的夹缝中<br>寻找生存的出口</h1>
+                <p>《夹缝生存》h顾青阳 聚焦都市边缘人的生存困境。跟随主角顾青阳的脚步，体验在职场、情感与道德边缘的艰难抉择，看一个普通人在绝境中如何撕开一道裂缝，透进一线生机。</p>
+                <div class="hero-meta">
+                    <span>📅 2023年更新中</span>
+                    <span>👁️ 12.5万 次阅读</span>
+                    <span>⭐ 9.2 分</span>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <button class="btn">开始阅读</button>
+                    <button class="btn btn-outline" style="color: #fff; border-color: #fff;">加入书架</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Grid -->
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-item">
+                        <span class="info-label">作者</span>
+                        <span class="info-value">h顾青阳</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">状态</span>
+                        <span class="info-value">连载中 (第42话)</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-item">
+                        <span class="info-label">标签</span>
+                        <span class="info-value">职场、悬疑、治愈</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">阅读平台</span>
+                        <span class="info-value">独家正版授权</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-item">
+                        <span class="info-label">字数</span>
+                        <span class="info-value">约 450,000 字</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">更新频率</span>
+                        <span class="info-value">每周三、六</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter List -->
+        <section id="chapters" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">最新章节</h2>
+                    <a href="#" class="btn-outline" style="padding: 6px 16px; font-size: 14px;">查看全部章节</a>
+                </div>
+                <div class="chapter-list">
+                    <div class="chapter-item">
+                        <div class="chapter-info">
+                            <h3>第42话：无声的博弈</h3>
+                            <div class="chapter-meta">2023-10-24 | 3,200 字 | 顾青阳视角</div>
+                        </div>
+                        <span class="chapter-status new">更新</span>
+                    </div>
+                    <div class="chapter-item">
+                        <div class="chapter-info">
+                            <h3>第41话：意外的转折</h3>
+                            <div class="chapter-meta">2023-10-17 | 2,800 字 | 顾青阳视角</div>
+                        </div>
+                        <span class="chapter-status">已完结</span>
+                    </div>
+                    <div class="chapter-item">
+                        <div class="chapter-info">
+                            <h3>第40话：信任的代价</h3>
+                            <div class="chapter-meta">2023-10-10 | 3,100 字 | 顾青阳视角</div>
+                        </div>
+                        <span class="chapter-status">已完结</span>
+                    </div>
+                    <div class="chapter-item">
+                        <div class="chapter-info">
+                            <h3>第39话：深夜的抉择</h3>
+                            <div class="chapter-meta">2023-10-03 | 2,900 字 | 顾青阳视角</div>
+                        </div>
+                        <span class="chapter-status">已完结</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Analysis -->
+        <section id="characters" class="section character-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">角色深度解析</h2>
+                </div>
+                <div class="char-grid">
+                    <article class="char-card">
+                        <div class="char-img-wrapper">
+                            <img src="https://picsum.photos/seed/char1/300/300" alt="顾青阳">
+                        </div>
+                        <h3>顾青阳</h3>
+                        <span class="char-role">主角 / 35岁</span>
+                        <p class="char-desc">一名在大城市打拼多年的中层管理，外表沉稳但内心疲惫。他在公司政治与家庭责任之间左右为难，为了守护想要保护的人，不得不一次次突破自己的底线。</p>
+                    </article>
+                    <article class="char-card">
+                        <div class="char-img-wrapper">
+                            <img src="https://picsum.photos/seed/char2/300/300" alt="林婉">
+                        </div>
+                        <h3>林婉</h3>
+                        <span class="char-role">关键人物 / 32岁</span>
+                        <p class="char-desc">顾青阳的合作伙伴，也是他生命中唯一的避风港。她有着敏锐的洞察力和不妥协的坚持，是顾青阳在黑暗中唯一的光源。</p>
+                    </article>
+                    <article class="char-card">
+                        <div class="char-img-wrapper">
+                            <img src="https://picsum.photos/seed/char3/300/300" alt="张总">
+                        </div>
+                        <h3>张总</h3>
+                        <span class="char-role">反派 / 50岁</span>
+                        <p class="char-desc">公司高层，典型的资本家形象。他精明、冷酷，将顾青阳视为棋子，试图通过利益交换来操控顾青阳的命运。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theme & Analysis -->
+        <section id="analysis" class="section theme-analysis">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">作品深度解读</h2>
+                </div>
+                <div class="analysis-box">
+                    <h3>关于“夹缝”的隐喻</h3>
+                    <p>《夹缝生存》中的“夹缝”不仅指物理空间上的狭窄，更象征着现代社会中个体在体制、情感与自我价值之间的挤压。h顾青阳通过细腻的笔触，描绘了现代人在高压环境下产生的心理异化与自我救赎。</p>
+                    <h3>现实主义的魅力</h3>
+                    <p>与传统的爽文不同，本作拒绝提供廉价的解决方案。故事中的每一次冲突都源于真实的社会逻辑，没有绝对的黑白，只有复杂灰色的权衡。顾青阳的每一次挣扎，都是对人性极限的探索。</p>
+                    <div class="tags-container">
+                        <span class="tag">#现实主义</span>
+                        <span class="tag">#人性博弈</span>
+                        <span class="tag">#都市生存</span>
+                        <span class="tag">#职场潜规则</span>
+                        <span class="tag">#情感治愈</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">读者问答 (FAQ)</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">《夹缝生存》适合什么人群阅读？<span>+</span></div>
+                    <div class="faq-answer">本作适合对现实主义题材感兴趣的读者，特别是关注职场生态、社会心理以及人性探索的成年读者。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">h顾青阳的画风有什么特点？<span>+</span></div>
+                    <div class="faq-answer">h顾青阳的画风简洁有力，善于通过眼神和微表情来刻画人物内心世界。线条刚硬，构图疏密有致，营造出压抑又充满张力的氛围。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">在哪里可以阅读到最全的《夹缝生存》？<span>+</span></div>
+                    <div class="faq-answer">目前本作已独家签约正版漫画平台，提供高清无删减的在线阅读服务，支持手机、平板及电脑多端同步。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">后续剧情的发展方向是怎样的？<span>+</span></div>
+                    <div class="faq-answer">作者并未透露具体的后续走向，但根据目前的伏笔分析，顾青阳将面临更大的职业危机，同时也将揭开他过去不为人知的秘密。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于《夹缝生存》</h4>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6;">
+                        我们致力于为读者提供高质量、有深度的独立漫画内容。在这里，每一个故事都源自真实，每一次阅读都是一次心灵的触动。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#chapters">章节目录</a></li>
+                        <li><a href="#characters">角色图鉴</a></li>
+                        <li><a href="#analysis">深度评论</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系与支持</h4>
+                    <ul>
+                        <li><a href="#">加入读者群</a></li>
+                        <li><a href="#">版权合作</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">举报侵权</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 夹缝生存漫画站. All Rights Reserved. Designed for h顾青阳.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                // Optional: Close others
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    if (other !== parent) {
+                        other.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile Menu Toggle (Simple implementation)
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        
+        menuBtn.addEventListener('click', () => {
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '70px';
+                nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.background = '#fff';
+                nav.style.padding = '20px';
+                nav.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+          </html>
