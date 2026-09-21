@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3DMGAME论坛-游戏玩家聚集地与攻略分享社区</title>
+    <meta name="description" content="3DMGAME论坛是一个专注于单机游戏、网络游戏、硬件评测及游戏攻略分享的专业社区。提供最新游戏资讯、汉化补丁、游戏下载、玩家交流及硬件讨论服务。">
+    <meta name="keywords" content="3dmgame论坛,3dm论坛,3dm游戏,游戏攻略,单机游戏下载,汉化补丁,游戏讨论">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --primary-hover: #b71c1c;
+            --secondary-color: #2c3e50;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-unit);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            color: var(--secondary-color);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: #f0f2f5;
+            border-radius: 20px;
+            padding: 4px 12px;
+            width: 300px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            flex: 1;
+            padding: 4px;
+            font-size: 0.9rem;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Banner */
+        .banner {
+            margin-top: var(--spacing-unit);
+            height: 200px;
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>');
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr 280px;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        /* Sidebar Left */
+        .sidebar-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .category-list {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .category-list h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-list li {
+            margin-bottom: 8px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .category-list span {
+            background: #eee;
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #666;
+        }
+
+        /* Main Content */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Hot Topics Grid */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .topic-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .topic-img {
+            height: 140px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .topic-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+        }
+
+        .topic-content {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topic-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .topic-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            flex: 1;
+        }
+
+        .topic-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ccc;
+        }
+
+        /* Latest Threads */
+        .threads-list {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .thread-item {
+            display: flex;
+            padding: 16px 0;
+            border-bottom: 1px solid #f0f0f0;
+            align-items: flex-start;
+        }
+
+        .thread-item:last-child {
+            border-bottom: none;
+        }
+
+        .thread-icon {
+            width: 40px;
+            height: 40px;
+            background: #f0f2f5;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            flex-shrink: 0;
+        }
+
+        .thread-info {
+            flex: 1;
+        }
+
+        .thread-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        .thread-title:hover {
+            color: var(--primary-color);
+        }
+
+        .thread-stats {
+            display: flex;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Sidebar Right */
+        .sidebar-right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .rank-list {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            gap: 10px;
+        }
+
+        .rank-num {
+            width: 20px;
+            height: 20px;
+            background: #eee;
+            color: #666;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .rank-item:nth-child(1) .rank-num { background: #ffd700; color: white; }
+        .rank-item:nth-child(2) .rank-num { background: #c0c0c0; color: white; }
+        .rank-item:nth-child(3) .rank-num { background: #cd7f32; color: white; }
+
+        .rank-title {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .notice-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #e65100;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 48px;
+            background: var(--secondary-color);
+            color: #ccc;
+            padding: 40px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 200px 1fr;
+            }
+            .sidebar-right {
+                display: none;
+            }
+            .topics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .search-bar {
+                width: 150px;
+            }
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                3DM <span>GAME FORUM</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#">首页</a>
+                <a href="#">单机游戏</a>
+                <a href="#">网游攻略</a>
+                <a href="#">硬件评测</a>
+                <a href="#">下载中心</a>
+                <a href="#">汉化补丁</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索帖子、游戏或用户...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Banner -->
+        <section class="banner">
+            <span>3DMGAME论坛 - 探索游戏世界的无限可能</span>
+        </section>
+
+        <div class="main-layout">
+            <!-- Left Sidebar -->
+            <aside class="sidebar-left">
+                <div class="category-list">
+                    <h3>游戏分区</h3>
+                    <ul>
+                        <li><a href="#"><span>单机游戏</span> <span>2.5w</span></a></li>
+                        <li><a href="#"><span>网络游戏</span> <span>1.8w</span></a></li>
+                        <li><a href="#"><span>手机游戏</span> <span>3.2w</span></a></li>
+                        <li><a href="#"><span>Steam专区</span> <span>5.6w</span></a></li>
+                        <li><a href="#"><span>主机游戏</span> <span>4.1w</span></a></li>
+                    </ul>
+                </div>
+                <div class="category-list">
+                    <h3>实用工具</h3>
+                    <ul>
+                        <li><a href="#"><span>游戏下载</span></a></li>
+                        <li><a href="#"><span>汉化补丁</span></a></li>
+                        <li><a href="#"><span>存档修改</span></a></li>
+                        <li><a href="#"><span>工具合集</span></a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="content-area">
+                
+                <!-- Hot Topics Section -->
+                <section>
+                    <div class="section-title">
+                        <span>🔥 热门话题</span>
+                        <a href="#">查看更多 &gt;</a>
+                    </div>
+                    <div class="topics-grid">
+                        <article class="topic-card">
+                            <div class="topic-img">
+                                <span class="tag">攻略</span>
+                                <img src="https://picsum.photos/seed/gamer1/400/250" alt="游戏攻略封面">
+                            </div>
+                            <div class="topic-content">
+                                <h3 class="topic-title"><a href="#">《黑神话：悟空》全BOSS打法技巧与装备推荐详解</a></h3>
+                                <p class="topic-excerpt">针对游戏中三个主要BOSS的机制分析，包含详细的教学视频链接及高难度的走位技巧分享，助你轻松通关...</p>
+                                <div class="topic-meta">
+                                    <div class="user-info">
+                                        <div class="avatar"></div>
+                                        <span>游戏大神</span>
+                                    </div>
+                                    <div class="stats">
+                                        <span class="stat-item">👁 12.5w</span>
+                                        <span class="stat-item">💬 328</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="topic-card">
+                            <div class="topic-img">
+                                <span class="tag">资讯</span>
+                                <img src="https://picsum.photos/seed/gamer2/400/250" alt="游戏资讯封面">
+                            </div>
+                            <div class="topic-content">
+                                <h3 class="topic-title"><a href="#">Steam秋季大促开启：多款3A大作价格跳水，必买清单汇总</a></h3>
+                                <p class="topic-excerpt">整理了本次促销中性价比最高的20款游戏，涵盖动作、RPG及独立游戏，包含折扣时间及购买建议...</p>
+                                <div class="topic-meta">
+                                    <div class="user-info">
+                                        <div class="avatar"></div>
+                                        <span>3DM编辑</span>
+                                    </div>
+                                    <div class="stats">
+                                        <span class="stat-item">👁 8.9w</span>
+                                        <span class="stat-item">💬 156</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="topic-card">
+                            <div class="topic-img">
+                                <span class="tag">硬件</span>
+                                <img src="https://picsum.photos/seed/gamer3/400/250" alt="硬件评测封面">
+                            </div>
+                            <div class="topic-content">
+                                <h3 class="topic-title"><a href="#">RTX 4090 vs RTX 4080：深度对比测试与游戏帧数实测</a></h3>
+                                <p class="topic-excerpt">在4K分辨率下测试了10款主流3A大作，详细分析两张显卡的性能差距以及功耗和散热表现...</p>
+                                <div class="topic-meta">
+                                    <div class="user-info">
+                                        <div class="avatar"></div>
+                                        <span>硬件控</span>
+                                    </div>
+                                    <div class="stats">
+                                        <span class="stat-item">👁 6.2w</span>
+                                        <span class="stat-item">💬 89</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Latest Threads Section -->
+                <section>
+                    <div class="section-title">
+                        <span>📋 最新讨论</span>
+                        <a href="#">进入论坛 &gt;</a>
+                    </div>
+                    <div class="threads-list">
+                        <div class="thread-item">
+                            <div class="thread-icon">🎮</div>
+                            <div class="thread-info">
+                                <h4 class="thread-title"><a href="#">求助：刚入坑《艾尔登法环》，DLC“黄金树幽影”怎么解锁？</a></h4>
+                                <div class="thread-stats">
+                                    <span class="stat-item">回复: 45</span>
+                                    <span class="stat-item">浏览: 1203</span>
+                                    <span class="stat-item">最后: 5分钟前</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thread-item">
+                            <div class="thread-icon">💾</div>
+                            <div class="thread-info">
+                                <h4 class="thread-title"><a href="#">分享：我的Steam库整理攻略，如何让游戏库看起来更清爽</a></h4>
+                                <div class="thread-stats">
+                                    <span class="stat-item">回复: 128</span>
+                                    <span class="stat-item">浏览: 5600</span>
+                                    <span class="stat-item">最后: 12分钟前</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thread-item">
+                            <div class="thread-icon">🔧</div>
+                            <div class="thread-info">
+                                <h4 class="thread-title"><a href="#">【汉化组发布】《赛博朋克2077：往日之影》1.2版本汉化补丁</a></h4>
+                                <div class="thread-stats">
+                                    <span class="stat-item">回复: 892</span>
+                                    <span class="stat-item">浏览: 45100</span>
+                                    <span class="stat-item">最后: 25分钟前</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thread-item">
+                            <div class="thread-icon">📱</div>
+                            <div class="thread-info">
+                                <h4 class="thread-title"><a href="#">讨论：现在的手游市场是不是越来越不适合硬核玩家生存了？</a></h4>
+                                <div class="thread-stats">
+                                    <span class="stat-item">回复: 56</span>
+                                    <span class="stat-item">浏览: 2300</span>
+                                    <span class="stat-item">最后: 32分钟前</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thread-item">
+                            <div class="thread-icon">🎮</div>
+                            <div class="thread-info">
+                                <h4 class="thread-title"><a href="#">【闲聊】大家最近都在玩什么单机游戏？推荐几款冷门佳作</a></h4>
+                                <div class="thread-stats">
+                                    <span class="stat-item">回复: 230</span>
+                                    <span class="stat-item">浏览: 8900</span>
+                                    <span class="stat-item">最后: 1小时前</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar-right">
+                <div class="notice-box">
+                    <strong>📢 论坛公告：</strong><br>
+                    请大家遵守社区规则，文明发言，禁止发布违规广告。新用户注册请完善资料以便审核。
+                </div>
+
+                <div class="rank-list">
+                    <h3>🔥 热门版块</h3>
+                    <div class="rank-item">
+                        <div class="rank-num">1</div>
+                        <a href="#" class="rank-title">Steam游戏讨论区</a>
+                    </div>
+                    <div class="rank-item">
+                        <div class="rank-num">2</div>
+                        <a href="#" class="rank-title">单机游戏综合讨论</a>
+                    </div>
+                    <div class="rank-item">
+                        <div class="rank-num">3</div>
+                        <a href="#" class="rank-title">外设与硬件论坛</a>
+                    </div>
+                    <div class="rank-item">
+                        <div class="rank-num">4</div>
+                        <a href="#" class="rank-title">游戏存档修改</a>
+                    </div>
+                    <div class="rank-item">
+                        <div class="rank-num">5</div>
+                        <a href="#" class="rank-title">网络游戏综合区</a>
+                    </div>
+                </div>
+
+                <div class="rank-list">
+                    <h3>⭐ 论坛之星</h3>
+                    <div class="rank-item">
+                        <div class="avatar" style="width:32px; height:32px;"></div>
+                        <a href="#" class="rank-title">游戏攻略帝</a>
+                    </div>
+                    <div class="rank-item">
+                        <div class="avatar" style="width:32px; height:32px;"></div>
+                        <a href="#" class="rank-title">汉化先锋</a>
+                    </div>
+                    <div class="rank-item">
+                        <div class="avatar" style="width:32px; height:32px;"></div>
+                        <a href="#" class="rank-title">硬件达人</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于3DM</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">版权声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏分类</h4>
+                    <ul>
+                        <li><a href="#">单机游戏</a></li>
+                        <li><a href="#">网络游戏</a></li>
+                        <li><a href="#">手机游戏</a></li>
+                        <li><a href="#">主机游戏</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>社区服务</h4>
+                    <ul>
+                        <li><a href="#">游戏下载</a></li>
+                        <li><a href="#">汉化补丁</a></li>
+                        <li><a href="#">存档中心</a></li>
+                        <li><a href="#">工具箱</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">官方QQ群</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 3DMGAME论坛 版权所有. 保留所有权利. 本站内容仅供交流学习，请勿用于商业用途。
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                  </html>
